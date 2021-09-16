@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      function myFunction(p1) {
+        console.log("@KG", p1);
+        if (typeof p1 === "undefined") {
+          return "Please enter a value";
+        } else if (p1 == null) {
+          return "Null is not allowed";
+        } else if (typeof p1 === "string") {
+          return "String";
+        } else if (typeof p1 === "number") {
+          return "Number";
+        } else if (typeof p1 === "boolean") {
+          return "Boolean";
+        } else if (typeof p1 === "function") {
+          return "Function";
+        } else if (p1 instanceof Object && p1 instanceof Array) {
+          return "Array";
+        } else if (p1 instanceof Object && !(p1 instanceof Array)) {
+          return "Object";
+        }
+      }
+      var x;
+      document.getElementById("demo").innerHTML = myFunction(x);
+    </script>
+  </body>
+</html>
